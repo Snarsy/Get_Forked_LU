@@ -6,6 +6,7 @@ int distance;
 void setup(){
     pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
     pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+    pinMode(6,OUTPUT);
     Serial.begin(9600); // Starts the serial communication
 }
 
@@ -19,4 +20,5 @@ void loop(){
     distance = duration * 0.034 / 2;
     Serial.print("Distance: ");
     Serial.println(distance);
+    analogWrite(6,distance);
 }   
